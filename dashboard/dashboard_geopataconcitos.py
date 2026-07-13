@@ -62,12 +62,17 @@ footer {{ visibility: hidden; }}
 
 h1, h2, h3, h4 {{ font-family: 'Bricolage Grotesque', sans-serif !important; letter-spacing: -0.01em; color: {PALETTE['forest']}; }}
 
+.block-container [data-testid="stMarkdownContainer"] p:not([class]),
+.block-container [data-testid="stMarkdownContainer"] li:not([class]),
+.block-container [data-testid="stMarkdownContainer"] strong:not([class]) {{ color: {PALETTE['ink']} !important; }}
+.block-container [data-testid="stWidgetLabel"] * {{ color: {PALETTE['ink']} !important; }}
+
 div[data-baseweb="tab-list"] {{ gap: 6px; border-bottom: 2px solid {PALETTE['line']}; }}
 button[data-baseweb="tab"] {{ background: transparent !important; }}
-button[data-baseweb="tab"] p {{ color: {PALETTE['ink']} !important; font-size: 18px !important; font-weight: 600 !important; }}
-button[data-baseweb="tab"]:hover p {{ color: {PALETTE['teal']} !important; }}
-button[data-baseweb="tab"][aria-selected="true"] p {{ color: {PALETTE['emerald']} !important; }}
-div[data-baseweb="tab-highlight"] {{ background-color: {PALETTE['lime_br']} !important; height: 4px !important; border-radius: 4px; }}
+button[data-baseweb="tab"], button[data-baseweb="tab"] p, button[data-baseweb="tab"] div, button[data-baseweb="tab"] span {{ color: #0FB5A9 !important; font-size: 18px !important; font-weight: 700 !important; }}
+button[data-baseweb="tab"]:hover p {{ color: #0A8F86 !important; }}
+button[data-baseweb="tab"][aria-selected="true"] p, button[data-baseweb="tab"][aria-selected="true"] span {{ color: {PALETTE['emerald']} !important; }}
+div[data-baseweb="tab-highlight"] {{ background-color: #0FB5A9 !important; height: 4px !important; border-radius: 4px; }}
 
 .gp-header {{
     background: linear-gradient(120deg, {PALETTE['forest']} 0%, {PALETTE['emerald']} 45%, {PALETTE['teal']} 78%, {PALETTE['lime']} 100%);
@@ -332,13 +337,16 @@ with tab_mapa:
         with col_m2:
             st.markdown("""<div class="gp-card"><h4>Filtro de Visualización</h4>
             <p>Cambia el fondo satelital con los controles del mapa. Al alejar el zoom, los puntos se agrupan en clústeres dinámicos.</p></div>""", unsafe_allow_html=True)
-            cat_sel = st.selectbox("Filtrar por categoría", ["Todas"] + CATEGORIAS)
+            SECTORES = ["Norte", "Noreste", "Este", "Sureste", "Sur", "Suroeste", "Oeste", "Noroeste"]
+            zona_sel = st.selectbox("Filtrar por sector", ["Todos"] + SECTORES)
             st.markdown(f"<div style='margin-top:16px;font-size:15px;color:{PALETTE['ink_soft']};line-height:1.6;'>Haz clic en cualquier marcador para ver el código, el nombre oficial y la categoría del patacón.</div>", unsafe_allow_html=True)
 
         with col_m1:
             df_mapa = df_patacones.copy()
-            if cat_sel != "Todas":
-                df_mapa = df_mapa[df_mapa["categoria"] == cat_sel]
+            if zona_sel != "Todos":
+                df_mapa = df_mapa[df_mapa["zona"] == zona_sel]
+            if df_mapa.empty:
+                df_mapa = df_patacones.copy()
 
             centro = [df_mapa["lat"].mean(), df_mapa["lon"].mean()]
             mapa = folium.Map(location=centro, zoom_start=14, tiles=None, control_scale=True)
