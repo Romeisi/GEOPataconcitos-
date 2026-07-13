@@ -1,0 +1,8 @@
+triggers:
+- name: ingesta_cada_12h
+  pipeline_uuid: ingesta_vertederos
+  schedule_type: time
+  schedule_interval: "0 */12 * * *"   # cada 12 horas (Etapa 2: orquestación)
+  status: active
+  settings:
+    skip_if_previous_running: true

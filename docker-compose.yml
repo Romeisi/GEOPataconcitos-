@@ -1,0 +1,96 @@
+services:
+  # ==========================================================================
+  # Base de datos espacial (Etapas 1 y 2)
+  # ==========================================================================
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: geopat_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-monitoreo_ambiental}
+      POSTGRES_USER: ${POSTGRES_USER:-romeisi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ola123}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d:ro    # aplica 01_schema.sql al iniciar
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-romeisi} -d ${POSTGRES_DB:-monitoreo_ambiental}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==========================================================================
+  # Orquestador Mage AI (Etapa 2)
+  # ==========================================================================
+  mage:
+    image: mageai/mageai:latest
+    container_name: geopat_mage
+    restart: unless-stopped
+    command: bash -c "pip install --no-cache-dir geopandas==0.14.4 shapely==2.0.4 && mage start geopataconcitos"
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-monitoreo_ambiental}
+      POSTGRES_USER: ${POSTGRES_USER:-romeisi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ola123}
+      SEED_GEOJSON_PATH: /home/src/pipeline/data/patacones_coordenadas.geojson
+      REQUIRE_USER_AUTHENTICATION: "0"
+    ports:
+      - "6789:6789"
+    volumes:
+      - ./mage/geopataconcitos:/home/src/geopataconcitos
+      - ./pipeline:/home/src/pipeline
+      - ./requirements.txt:/home/src/requirements.txt
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ==========================================================================
+  # API FastAPI (Etapa 3 — capa de exposición)
+  # ==========================================================================
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: geopat_api
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-monitoreo_ambiental}
+      POSTGRES_USER: ${POSTGRES_USER:-romeisi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ola123}
+      SEED_GEOJSON_PATH: /app/pipeline/data/vertederos_seed.geojson
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./pipeline:/app/pipeline
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ==========================================================================
+  # Dashboard Streamlit (Etapa 3 — capa de consumo)
+  # ==========================================================================
+  dashboard:
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    container_name: geopat_dashboard
+    restart: unless-stopped
+    environment:
+      API_BASE_URL: http://api:8000
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-monitoreo_ambiental}
+      POSTGRES_USER: ${POSTGRES_USER:-romeisi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ola123}
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+
+volumes:
+  db_data:

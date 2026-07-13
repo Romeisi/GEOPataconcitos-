@@ -1,0 +1,27 @@
+
+import sys
+import geopandas as gdf
+sys.path.append("/home/src")
+
+from pipeline import transform  # noqa: E402
+
+if "transformer" not in globals():
+    from mage_ai.data_preparation.decorators import transformer
+
+
+@transformer
+def transformar_datos(data, *args, **kwargs):
+    lote = (data or {}).get("lote")
+    gdf = transform.transformar(lote)
+    # Se pasa el WKT + atributos al siguiente bloque (serializable)
+    gdf = gdf.copy()
+    gdf["wkt"] = gdf.geometry.apply(lambda g: g.wkt)
+    return gdf.drop(columns="geometry")
+
+
+@test
+def test_output(output, *args) -> None:
+    assert output is not None, "El transformer no devolvió datos"
+    assert len(output) > 0, "El GeoDataFrame transformado está vacío"
+    for col in ("codigo_unico", "categoria", "lon", "lat"):
+        assert col in output.columns, f"Falta la columna {col}"

@@ -1,0 +1,630 @@
+{
+  "type": "FeatureCollection",
+  "name": "vertederos_san_miguelito",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.511399,
+          9.0376
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00001",
+        "Name": "Barriada Samaria",
+        "corregimiento": "Amelia Denis de Icaza",
+        "area_m2": 227.28
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.507874,
+          9.039087
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00002",
+        "Name": "Sector Torrijos Carter",
+        "corregimiento": "Amelia Denis de Icaza",
+        "area_m2": 47.32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.517363,
+          9.049129
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00003",
+        "Name": "Parque Monte Oscuro",
+        "corregimiento": "Amelia Denis de Icaza",
+        "area_m2": 204.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.484323,
+          9.034281
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00004",
+        "Name": "Calle Monte Oscuro",
+        "corregimiento": "Belisario Porras",
+        "area_m2": 828.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.487268,
+          9.031666
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00005",
+        "Name": "Vía Guadalupe",
+        "corregimiento": "Belisario Porras",
+        "area_m2": 910.19
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.488679,
+          9.025726
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00006",
+        "Name": "Río Santa Marta",
+        "corregimiento": "Belisario Porras",
+        "area_m2": 808.11
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.473486,
+          9.042871
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00007",
+        "Name": "Ave. Roosevelt",
+        "corregimiento": "Belisario Porras",
+        "area_m2": 518.51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.456156,
+          9.075906
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00008",
+        "Name": "Río La Milla",
+        "corregimiento": "José Domingo Espinar",
+        "area_m2": 821.33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.4699,
+          9.07291
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00009",
+        "Name": "Loma Roosevelt",
+        "corregimiento": "José Domingo Espinar",
+        "area_m2": 231.64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.450204,
+          9.076528
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00010",
+        "Name": "Callejón Villa Lucre",
+        "corregimiento": "José Domingo Espinar",
+        "area_m2": 373.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.462474,
+          9.059904
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00011",
+        "Name": "Barriada San Antonio",
+        "corregimiento": "José Domingo Espinar",
+        "area_m2": 643.13
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.458181,
+          9.071239
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00012",
+        "Name": "Callejón Cerro Batea",
+        "corregimiento": "José Domingo Espinar",
+        "area_m2": 247.37
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.49764,
+          9.052749
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00013",
+        "Name": "Vía Las Brisas",
+        "corregimiento": "Mateo Iturralde",
+        "area_m2": 537.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.51223,
+          9.034497
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00014",
+        "Name": "Loma Roosevelt",
+        "corregimiento": "Mateo Iturralde",
+        "area_m2": 313.1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.49037,
+          9.034064
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00015",
+        "Name": "Vía La Milla",
+        "corregimiento": "Mateo Iturralde",
+        "area_m2": 834.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.503505,
+          9.044731
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00016",
+        "Name": "Callejón Los Andes",
+        "corregimiento": "Mateo Iturralde",
+        "area_m2": 870.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.507081,
+          9.035357
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00017",
+        "Name": "Loma Buenos Aires",
+        "corregimiento": "Mateo Iturralde",
+        "area_m2": 541.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.495414,
+          9.039548
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00018",
+        "Name": "Calle El Valle",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 223.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.486861,
+          9.029844
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00019",
+        "Name": "Calle San Isidro",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 820.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.494868,
+          9.03701
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00020",
+        "Name": "Ave. San Antonio",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 78.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.492301,
+          9.041907
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00021",
+        "Name": "Quebrada Guadalupe",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 923.09
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.492113,
+          9.034361
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00022",
+        "Name": "Vía Guadalupe",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 267.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.501204,
+          9.025044
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00023",
+        "Name": "Loma El Valle",
+        "corregimiento": "Victoriano Lorenzo",
+        "area_m2": 22.62
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.508446,
+          9.022684
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00024",
+        "Name": "Parque San Antonio",
+        "corregimiento": "Arnulfo Arias",
+        "area_m2": 601.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.502026,
+          9.015274
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00025",
+        "Name": "Parque El Crisol",
+        "corregimiento": "Arnulfo Arias",
+        "area_m2": 169.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.499273,
+          9.024875
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00026",
+        "Name": "Vía Mendoza",
+        "corregimiento": "Arnulfo Arias",
+        "area_m2": 123.68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.505219,
+          9.016247
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00027",
+        "Name": "Barriada Roosevelt",
+        "corregimiento": "Arnulfo Arias",
+        "area_m2": 547.47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.471528,
+          9.084585
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00028",
+        "Name": "Calle Los Andes",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 515.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.472276,
+          9.080834
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00029",
+        "Name": "Parque San Antonio",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 173.23
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.489917,
+          9.075155
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00030",
+        "Name": "Sector Mendoza",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 521.36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.47888,
+          9.074576
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00031",
+        "Name": "Parque Nuevo Veranillo",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 367.03
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.489607,
+          9.067904
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00032",
+        "Name": "Río Samaria",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 334.15
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.489715,
+          9.070523
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00033",
+        "Name": "Quebrada Torrijos Carter",
+        "corregimiento": "Belisario Frías",
+        "area_m2": 85.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.500369,
+          9.06973
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00034",
+        "Name": "Sector Santa Marta",
+        "corregimiento": "Omar Torrijos",
+        "area_m2": 85.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.515858,
+          9.064055
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00035",
+        "Name": "Río Buenos Aires",
+        "corregimiento": "Omar Torrijos",
+        "area_m2": 142.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.502169,
+          9.059344
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00036",
+        "Name": "Sector Guadalupe",
+        "corregimiento": "Omar Torrijos",
+        "area_m2": 770.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.473497,
+          9.054816
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00037",
+        "Name": "Quebrada Guadalupe",
+        "corregimiento": "Rufina Alfaro",
+        "area_m2": 402.09
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.464523,
+          9.040455
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00038",
+        "Name": "Barriada Torrijos Carter",
+        "corregimiento": "Rufina Alfaro",
+        "area_m2": 764.47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.469129,
+          9.043598
+        ]
+      },
+      "properties": {
+        "codigo_unico": "PAT-00039",
+        "Name": "Calle Santa Marta",
+        "corregimiento": "Rufina Alfaro",
+        "area_m2": 150.03
+      }
+    }
+  ]
+}

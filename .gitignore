@@ -1,0 +1,29 @@
+# Entorno
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Datos y logs
+*.log
+*.csv
+!requirements.txt
+
+# Mage
+mage/geopataconcitos/.preferences.yaml
+mage_data/
+
+# Docker
+*.pid
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

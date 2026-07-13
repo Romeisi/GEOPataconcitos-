@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net" modified="2026-07-11T00:00:00.000Z" agent="GEOPataconcitos" version="24.0.0">
+  <diagram id="arquitectura-geopataconcitos" name="Arquitectura">
+    <mxGraphModel dx="1100" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Contenedor Docker -->
+        <mxCell id="docker" value="Infraestructura: Docker &amp; Docker Compose" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7D6;strokeColor=#D6B656;verticalAlign=top;fontStyle=1;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="180" y="60" width="900" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- Fuente externa -->
+        <mxCell id="fuente" value="Fuente de Datos&#10;(GeoJSON de vertederos&#10;actualizado periódicamente)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="120" width="130" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Mage -->
+        <mxCell id="mage" value="Mage AI&#10;(Orquestador · cada 12 h)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="110" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Scripts Python -->
+        <mxCell id="scripts" value="Scripts Python&#10;Extract &amp; Load (raw)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="230" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- GeoPandas -->
+        <mxCell id="geopandas" value="Pandas / GeoPandas&#10;Transform (POINT · EPSG:4326)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="800" y="360" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- PostGIS -->
+        <mxCell id="postgis" value="PostgreSQL + PostGIS&#10;monitoreo_ambiental&#10;(vertederos_maestro,&#10;detecciones_historial)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="360" y="330" width="180" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- FastAPI -->
+        <mxCell id="api" value="FastAPI + Uvicorn&#10;API REST&#10;/locations · /locations/radius" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="360" y="530" width="200" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Streamlit -->
+        <mxCell id="dashboard" value="Streamlit + Folium + Plotly&#10;Dashboard interactivo&#10;(mapa · treemap · heatmap · radar)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="690" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Usuario -->
+        <mxCell id="usuario" value="Usuario de Negocio" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="695" width="120" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Flechas -->
+        <mxCell id="e1" value="Extracción" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="fuente" target="scripts"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Programa tareas" style="endArrow=classic;html=1;dashed=1;fontSize=10;" edge="1" parent="1" source="mage" target="scripts"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Datos crudos" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="scripts" target="postgis"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Lectura raw" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="postgis" target="geopandas"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Carga tabla final" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="geopandas" target="postgis"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Consultas espaciales SQL" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="postgis" target="api"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Endpoints REST (JSON)" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="api" target="dashboard"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" value="Mapas interactivos" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="dashboard" target="usuario"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
